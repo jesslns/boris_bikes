@@ -4,7 +4,4 @@ attr_reader :bike
     true
   end
 
-  #def docked?
-    #true
-#  end
 end

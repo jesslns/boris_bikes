@@ -20,7 +20,7 @@ I want to see a bike that has been docked
 | ------- | :------: |
 | Person | use_bike, return_bike, check_docking_station|
 | DockingStation | release_bike, dock_bike |
-| Bike | working?, docked?|
+| Bike | working?|
 
 ##### How Objects Communicate with Messages
 Please click [here](https://github.com/jesslns/boris_bikes/blob/master/objects_messages_diagram.jpg) to see the diagram.
