@@ -29,10 +29,7 @@ end
 
 describe '#dock' do
   it "raises error when docking station already contains a bike" do
-    # This way doesnt work
-    # bike = Bike.new
-    # expect {subject.dock(bike)} ......
-    #subject.dock(Bike.new)
+    subject.dock(Bike.new) # dock a bike first
     expect{subject.dock(Bike.new)}.to raise_error "No space!"
   end
 end
