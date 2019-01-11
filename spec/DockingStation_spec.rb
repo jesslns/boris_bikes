@@ -18,7 +18,7 @@ describe DockingStation do
   it "records a returned bike" do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.bikes).to eq bike
   end
 
 describe '#release_bike' do
@@ -28,8 +28,9 @@ describe '#release_bike' do
 end
 
 describe '#dock' do
-  it "raises error when docking station already contains a bike" do
-    subject.dock(Bike.new) # dock a bike first
+  it "raises error when docking station is full" do
+    #20.times{ subject.dock(Bike.new)} # dock a bike first
+    subject.dock(Bike.new)
     expect{subject.dock(Bike.new)}.to raise_error "No space!"
   end
 end
