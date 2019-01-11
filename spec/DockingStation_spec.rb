@@ -18,7 +18,7 @@ describe DockingStation do
   it "records a returned bike" do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bikes).to eq bike
+    expect(subject.bikes[-1]).to eq bike #we are assigning the new instance of bike to @bikes
   end
 
 describe '#release_bike' do
@@ -29,8 +29,8 @@ end
 
 describe '#dock' do
   it "raises error when docking station is full" do
-    #20.times{ subject.dock(Bike.new)} # dock a bike first
-    subject.dock(Bike.new)
+    20.times{ subject.dock(Bike.new)} # dock a bike first
+    #subject.dock(Bike.new)
     expect{subject.dock(Bike.new)}.to raise_error "No space!"
   end
 end

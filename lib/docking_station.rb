@@ -4,18 +4,28 @@ class DockingStation
 
 attr_reader :bikes
 
-#def initialize (bike)
-  #@bikes = bike # atore array of 20 elements
-#end
+def initialize
+  @bikes = []
+end
 
   def dock(bike)
-    fail 'No space!' unless !@bikes
-    @bikes = bike #= @bikes.push(bike)
+    fail 'No space!' if full?
+    @bikes << bike
+    return bike
   end
 
   def release_bike
-    fail 'No bike!' unless @bikes
-    @bikes
+    fail 'No bike!' if empty?
+    @bikes.pop
   end
+
+  private
+    def full?
+      @bikes.count >= 20
+    end
+
+    def empty?
+      @bikes.count == 0
+    end
 
 end
